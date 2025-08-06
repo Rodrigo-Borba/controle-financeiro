@@ -2,3 +2,4 @@ streamlit
 pandas
 plotly
 st-gsheets-connection
+Authlib>=1.3.2
