@@ -1,0 +1,11 @@
+﻿data;descricao;categoria;metodo_pagamento;valor
+18/01/2025;Uber;Transporte;Crédito;25
+19/01/2025;Cinema;Lazer;Crédito;80
+20/01/2025;Uber;Transporte;Crédito;25
+21/01/2025;Restaurante X;Refeição;Débito;85
+23/01/2025;Uber;Transporte;Crédito;25
+24/01/2025;Náutico;Lazer;Pix;30
+02/02/2025;Uber;Transporte;Crédito;25
+06/02/2025;Uber;Transporte;Crédito;25
+07/02/2025;Restaurante Y;Refeição;Débito;86
+08/02/2025;Lanchonete X;Refeição;Pix;30
