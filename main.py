@@ -38,6 +38,8 @@ METODO_PAGAMENTO = [
     "Transferência"
 ]
 
+USUARIOS_VALIDOS = st.secrets["USUARIOS_VALIDOS"]
+
 
 def login_screen():
     st.header("Faça o log in para acessar o aplicativo")
@@ -46,7 +48,7 @@ def login_screen():
 
 if not st.user.is_logged_in:
     login_screen()
-else:
+elif st.user.email in USUARIOS_VALIDOS:
     geral_pagina = st.Page(
         page="views/geral.py",
         title="Geral",
