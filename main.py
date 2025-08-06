@@ -1,4 +1,5 @@
 # coding: cp1252
+import time
 
 import streamlit as st
 import pandas as pd
@@ -191,3 +192,7 @@ elif st.user.email in USUARIOS_VALIDOS:
         st.button("Logout", on_click=st.logout)
 
     pg.run()
+else:
+    st.error("Usuário inválido")
+    time.sleep(2)
+    st.logout()
