@@ -97,6 +97,7 @@ elif st.user.email in USUARIOS_VALIDOS:
                     st.session_state.planilha_obj.atualizar_planilha_receitas(df=df_final_receita)
                     st.session_state.df_receitas = df_final_receita
                     st.session_state.df_receitas.sort_values("data", inplace=True, ascending=False)
+                    st.rerun()
 
 
         @st.dialog("Adicionar Despesa")
@@ -172,6 +173,7 @@ elif st.user.email in USUARIOS_VALIDOS:
                     st.session_state.planilha_obj.atualizar_planilha_despesas(df=df_final)
                     st.session_state.df_despesas = df_final
                     st.session_state.df_despesas.sort_values("data", inplace=True, ascending=False)
+                    st.rerun()
 
 
         sel_despesa_receita = st.selectbox(label="Escolha o que quer adicionar:", options=["Despesa", "Receita"])
