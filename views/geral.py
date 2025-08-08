@@ -171,6 +171,7 @@ with st.expander("Editar Receitas"):
               on_click=atualizar_receitas)
 
 with st.expander("Editar Despesas"):
+    print(st.session_state.df_despesas)
     df_despesas_editadas = st.data_editor(st.session_state.df_despesas)
 
 
