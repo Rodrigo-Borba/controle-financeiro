@@ -163,7 +163,8 @@ with st.expander("Editar Receitas"):
 
     def atualizar_receitas():
         st.session_state.planilha_obj.atualizar_planilha_receitas(df=df_receitas_editadas)
-        st.session_state.df_receitas = pd.DataFrame()
+        st.session_state.df_receitas = df_receitas_editadas
+        st.session_state.df_receitas.sort_values("data", inplace=True, ascending=False)
 
 
     st.button("Atualizar Receitas",
@@ -175,7 +176,8 @@ with st.expander("Editar Despesas"):
 
     def atualizar_despesas():
         st.session_state.planilha_obj.atualizar_planilha_despesas(df=df_despesas_editadas)
-        st.session_state.df_despesas = pd.DataFrame()
+        st.session_state.df_despesas = df_despesas_editadas
+        st.session_state.df_despesas.sort_values("data", inplace=True, ascending=False)
 
 
     st.button("Atualizar Despesas",

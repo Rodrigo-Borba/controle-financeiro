@@ -95,7 +95,8 @@ elif st.user.email in USUARIOS_VALIDOS:
                     df_final_receita = pd.concat([df_inicial_receita, nova_linha_receita.to_frame().T],
                                                  ignore_index=True)
                     st.session_state.planilha_obj.atualizar_planilha_receitas(df=df_final_receita)
-                    st.session_state.df_receitas = pd.DataFrame()
+                    st.session_state.df_receitas = df_final_receita
+                    st.session_state.df_receitas.sort_values("data", inplace=True, ascending=False)
 
 
         @st.dialog("Adicionar Despesa")
@@ -169,7 +170,8 @@ elif st.user.email in USUARIOS_VALIDOS:
                         df_final = pd.concat([df_inicial, nova_linha.to_frame().T], ignore_index=True)
 
                     st.session_state.planilha_obj.atualizar_planilha_despesas(df=df_final)
-                    st.session_state.df_despesas = pd.DataFrame()
+                    st.session_state.df_despesas = df_final
+                    st.session_state.df_despesas.sort_values("data", inplace=True, ascending=False)
 
 
         sel_despesa_receita = st.selectbox(label="Escolha o que quer adicionar:", options=["Despesa", "Receita"])
