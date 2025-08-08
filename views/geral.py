@@ -39,6 +39,7 @@ def buscar_despesas():
     if not "planilha_obj" in st.session_state or not st.session_state.planilha_obj:
         st.session_state.planilha_obj = Planilha()
     st.session_state.df_despesas = st.session_state.planilha_obj.buscar_despesas_df()
+    st.session_state.df_despesas
     return st.session_state.df_despesas
 
 
@@ -171,7 +172,6 @@ with st.expander("Editar Receitas"):
               on_click=atualizar_receitas)
 
 with st.expander("Editar Despesas"):
-    print(st.session_state.df_despesas)
     df_despesas_editadas = st.data_editor(st.session_state.df_despesas)
 
 
